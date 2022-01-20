@@ -1,6 +1,14 @@
 package yang.dreamland.www.entity;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Transient;
+import java.util.List;
+
 public class User {
+    @Id//标识主键
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //自增长策略
     private Long id;
 
     private String email;
@@ -16,6 +24,16 @@ public class User {
     private String imgUrl;
 
     private String enable;
+    @Transient
+    protected List<Role> roles;
+
+    public List<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<Role> roles) {
+        this.roles = roles;
+    }
 
     public Long getId() {
         return id;
