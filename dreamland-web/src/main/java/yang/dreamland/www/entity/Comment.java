@@ -1,8 +1,16 @@
 package yang.dreamland.www.entity;
 
+import yang.dreamland.www.common.DateUtils;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Transient;
 import java.util.Date;
+import java.util.List;
 
 public class Comment {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private Long conId;
@@ -18,6 +26,16 @@ public class Comment {
     private Integer upvote;
 
     private String comContent;
+
+
+    @Transient
+    private User user;
+
+    @Transient
+    private User byUser;
+
+    @Transient
+    private List<Comment> comList;
 
     public Long getId() {
         return id;
@@ -82,4 +100,29 @@ public class Comment {
     public void setComContent(String comContent) {
         this.comContent = comContent == null ? null : comContent.trim();
     }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public User getByUser() {
+        return byUser;
+    }
+
+    public void setByUser(User byUser) {
+        this.byUser = byUser;
+    }
+
+    public List<Comment> getComList() {
+        return comList;
+    }
+
+    public void setComList(List<Comment> comList) {
+        this.comList = comList;
+    }
+
 }

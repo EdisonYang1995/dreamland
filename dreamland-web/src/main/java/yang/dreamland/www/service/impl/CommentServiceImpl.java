@@ -6,13 +6,9 @@ import tk.mybatis.mapper.entity.Example;
 import yang.dreamland.www.dao.CommentMapper;
 import yang.dreamland.www.entity.Comment;
 import yang.dreamland.www.service.CommentService;
-
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by wly on 2017/12/15.
- */
 @Service
 public class CommentServiceImpl implements CommentService {
     @Autowired
@@ -20,7 +16,7 @@ public class CommentServiceImpl implements CommentService {
 
 
     public int add(Comment comment) {
-        return commentMapper.insert(comment);
+        return commentMapper.insertComment(comment);
     }
 
     public void update(Comment comment) {
@@ -28,9 +24,7 @@ public class CommentServiceImpl implements CommentService {
     }
 
     public List<Comment> findAll(Long cid) {
-        Comment comment = new Comment();
-        comment.setConId(cid);
-        return commentMapper.select(comment);
+        return commentMapper.selectAll(cid);
     }
 
     public Comment findById(Long id) {
@@ -41,16 +35,11 @@ public class CommentServiceImpl implements CommentService {
 
     public List<Comment> findAllFirstComment(Long cid)
     {
-        Comment comment = new Comment();
-        comment.setConId(cid);
-        return commentMapper.select(comment);
+        return commentMapper.findAllFirstComment(cid);
     }
 
     public List<Comment> findAllChildrenComment(Long cid, String children) {
-        Comment comment = new Comment();
-        comment.setConId(cid);
-        comment.setChildren(children);
-        return commentMapper.select(comment);
+        return commentMapper.findAllChildrenComment(cid,children);
     }
 
     public void deleteById(Long id) {
