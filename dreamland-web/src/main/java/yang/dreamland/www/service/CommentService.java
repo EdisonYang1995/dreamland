@@ -55,4 +55,10 @@ public interface CommentService {
      * @param children
      */
     void deleteChildrenComment(String children);
+
+    /**
+     * 根据文章id删除评论
+     * @param cid
+     */
+    void deleteByContentId(Long cid);
 }

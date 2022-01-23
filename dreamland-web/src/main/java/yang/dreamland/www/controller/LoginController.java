@@ -23,7 +23,7 @@ public class LoginController extends BaseController {
     public String login(Model model) {
         User user = (User)getSession().getAttribute("user");
         if(user!=null){
-            return "/personal/personal";
+            return "redirect:/list";
         }
         return "../login";
     }
@@ -59,7 +59,7 @@ public class LoginController extends BaseController {
             log.info("用户登录登录成功");
             getSession().setAttribute( "user",user );
             model.addAttribute("user",user);
-            return "/personal/personal";
+            return "redirect:/list";
         }else{
             log.info("用户登录登录失败");
             model.addAttribute("email",email);

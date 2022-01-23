@@ -61,6 +61,10 @@ public class BaseController {
         List<UserContent> list = userContentService.findAll();
         return list;
     }
+    public Page<UserContent> findAll(Integer pageNum, Integer pageSize){
+        Page<UserContent> page = userContentService.findAll(pageNum ,pageSize);
+        return page;
+    }
 
     public Page<UserContent> findAll(UserContent content, Integer pageNum, Integer pageSize){
         Page<UserContent> page = userContentService.findAll( content,pageNum ,pageSize);
@@ -121,5 +125,5 @@ public class BaseController {
         return request.getRemoteAddr();
     }
 
-
 }
+

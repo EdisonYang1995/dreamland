@@ -50,15 +50,13 @@
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -191,6 +189,7 @@
       <workItem from="1642666624649" duration="2953000" />
       <workItem from="1642691560974" duration="2506000" />
       <workItem from="1642771718607" duration="4020000" />
+      <workItem from="1642854497667" duration="5760000" />
     </task>
     <servers />
   </component>
