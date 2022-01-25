@@ -11,9 +11,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import yang.dreamland.www.common.PageHelper;
 import yang.dreamland.www.entity.User;
 import yang.dreamland.www.entity.UserContent;
+import yang.dreamland.www.entity.UserInfo;
 import yang.dreamland.www.service.CommentService;
 import yang.dreamland.www.service.UpvoteService;
 import yang.dreamland.www.service.UserContentService;
+import yang.dreamland.www.service.UserInfoService;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,6 +32,10 @@ public class PersonalController extends BaseController{
 
     @Autowired
     private UpvoteService upvoteService;
+
+    @Autowired
+    private UserInfoService userInfoService;
+
     /**
      * 初始化个人主页数据
      * @param model
@@ -170,5 +177,23 @@ public class PersonalController extends BaseController{
         upvoteService.deleteByContentId(cid);
         userContentService.deleteById(cid);
         return "redirect:/list?manage=manage";
+    }
+
+    /**
+     * 进入个人资料修改页面
+     * @param model
+     * @return
+     */
+    @RequestMapping("/profile")
+    public String profile(Model model) {
+        User user = (User)getSession().getAttribute("user");
+        if(user==null){
+            return "../login";
+        }
+        UserInfo userInfo =   userInfoService.findByUid(user.getId());
+        model.addAttribute("user",user);
+        model.addAttribute("userInfo",userInfo);
+
+        return "personal/profile";
     }
 }
