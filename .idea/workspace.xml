@@ -44,12 +44,54 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/dreamland-web" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn install -Dmaven.test.skip=true" />
+    </option>
+  </component>
+  <component name="RunAnythingContextRecentDirectoryCache">
+    <option name="paths">
+      <recentPaths value="$PROJECT_DIR$" />
+      <recentPaths value="$PROJECT_DIR$/dreamland-web" />
+    </option>
+  </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat">
+    <configuration name="TestSolrJ" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dreamland-web" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestSolrJ" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSolrJ.testSave" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dreamland-web" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestSolrJ" />
+      <option name="METHOD_NAME" value="testSave" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestSolrJ.testSaveAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="dreamland-web" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestSolrJ" />
+      <option name="METHOD_NAME" value="testSaveAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestTransaction.testSave" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="dreamland-web" />
       <option name="PACKAGE_NAME" value="" />
@@ -150,10 +192,16 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.TestTransaction.testSave" />
+      <item itemvalue="JUnit.TestSolrJ.testSave" />
+      <item itemvalue="JUnit.TestSolrJ" />
+      <item itemvalue="JUnit.TestSolrJ.testSaveAll" />
       <item itemvalue="Tomcat Server.Tomcat" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestSolrJ.testSaveAll" />
+        <item itemvalue="JUnit.TestSolrJ.testSave" />
+        <item itemvalue="JUnit.TestSolrJ" />
         <item itemvalue="JUnit.TestTransaction.testSave" />
       </list>
     </recent_temporary>
@@ -181,6 +229,12 @@
       <workItem from="1642854497667" duration="5760000" />
       <workItem from="1643024127600" duration="49000" />
       <workItem from="1643107124753" duration="2495000" />
+      <workItem from="1643209659361" duration="281000" />
+      <workItem from="1643209988980" duration="875000" />
+      <workItem from="1643210998889" duration="2177000" />
+      <workItem from="1643217763439" duration="1635000" />
+      <workItem from="1643219472853" duration="611000" />
+      <workItem from="1643276551107" duration="2236000" />
     </task>
     <servers />
   </component>

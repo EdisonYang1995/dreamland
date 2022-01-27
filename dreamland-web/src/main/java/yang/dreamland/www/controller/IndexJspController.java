@@ -19,6 +19,7 @@ import yang.dreamland.www.service.CommentService;
 import yang.dreamland.www.service.UpvoteService;
 import yang.dreamland.www.service.UserContentService;
 import yang.dreamland.www.service.UserService;
+import yang.dreamland.www.service.SolrService;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -31,23 +32,29 @@ public class IndexJspController extends BaseController {
     private UserContentService userContentService;
     @Autowired
     private UpvoteService upvoteService;
-
+    @Autowired
+    private SolrService solrService;
     @Autowired
     private CommentService commentService;
     @Autowired
     private UserService userService;
     @RequestMapping("/index_list")
-    public String findAllList(Model model, @RequestParam(value = "id",required = false) String id ,
+    public String findAllList(Model model, @RequestParam(value = "keyword",required = false) String keyword,
                               @RequestParam(value = "pageNum",required = false) Integer pageNum ,
                               @RequestParam(value = "pageSize",required = false) Integer pageSize) {
-
         log.info( "===========进入index_list=========" );
         User user = (User)getSession().getAttribute("user");
         if(user!=null){
             model.addAttribute( "user",user );
         }
-        Page<UserContent> page =  findAll(pageNum,pageSize);
-        model.addAttribute( "page",page );
+        if(StringUtils.isNotBlank(keyword)){
+            Page<UserContent> page = solrService.findByKeyWords( keyword ,pageNum,pageSize);
+            model.addAttribute("keyword", keyword);
+            model.addAttribute("page", page);
+        }else {
+            Page<UserContent> page =  findAll(pageNum,pageSize);
+            model.addAttribute( "page",page );
+        }
         return "../index";
     }
 

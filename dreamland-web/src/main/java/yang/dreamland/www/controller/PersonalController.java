@@ -33,6 +33,8 @@ public class PersonalController extends BaseController{
     private  CommentService commentService;
     @Autowired
     private UpvoteService upvoteService;
+    @Autowired
+    private SolrService solrService;
 
 
     /**
@@ -172,9 +174,8 @@ public class PersonalController extends BaseController{
         if(user==null) {
             return "../login";
         }
-        commentService.deleteByContentId(cid);
-        upvoteService.deleteByContentId(cid);
         userContentService.deleteById(cid);
+        solrService.deleteById(cid);
         return "redirect:/list?manage=manage";
     }
 
